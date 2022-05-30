@@ -1,24 +1,78 @@
-# README
+# Hello world App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
 
-Things you may want to cover:
+> The HelloWorld app is a mobile web application that return a random greeting.
 
-* Ruby version
+## Built With
 
-* System dependencies
+- Ruby on Rails
+- Postgres
+- React
 
-* Configuration
+## Getting Started
 
-* Database creation
+### Get a local copy
 
-* Database initialization
+- git clone the project
 
-* How to run the test suite
+```bash
+git clone https://github.com/jaflih/hello-rails-react.git
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+cd hello-rails-react
+```
 
-* Deployment instructions
+### Install the app
 
-* ...
+```
+bundle install
+rails db:migrate
+```
+
+### Run the seeder
+
+```
+rails db:seed
+```
+
+### Run the app
+
+- To run the app
+
+```
+rails s
+```
+
+```
+Visit http://localhost:3000/ in your browser.
+```
+
+## Authors
+
+👤 **Jaflih**
+
+- GitHub: [@githubhandle](https://github.com/jaflih)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/jaflih/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- [Template by minimmmal](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
+- Microverse
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
