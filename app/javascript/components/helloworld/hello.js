@@ -11,7 +11,7 @@ export const GET_HELLO = 'GET_HELLO';
 const helloReducer = (state = { loading: true }, action) => {
   switch (action.type) {
     case GET_HELLO: {
-      return { greeting: action.json.message };
+      return { greeting: action.payload.message };
     }
     default: {
       return state;
