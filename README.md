@@ -39,10 +39,16 @@ rails db:seed
 
 ### Run the app
 
-- To run the app
+- To run the server
 
 ```
 rails s
+```
+
+- To run the webpack server
+
+```
+./bin/webpack-dev-server
 ```
 
 ```
