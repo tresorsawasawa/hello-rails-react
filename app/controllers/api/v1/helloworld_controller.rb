@@ -1,7 +1,7 @@
 class Api::V1::HelloworldController < ApplicationController
   def index
-    @hellos = Helloworld.all
+    @hello = Helloworld.find(rand(1..5))
 
-    render json: @hellos
+    render json: @hello
   end
 end
