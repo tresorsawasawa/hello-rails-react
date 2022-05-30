@@ -1,38 +1,37 @@
 import React from 'react';
-import axios from 'axios';
-import PropTypes from 'prop-types';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { Provider } from 'react-redux';
 
-const API_URL = 'http://localhost:3000/api/v1/helloworld';
-
-function getAPIData() {
-  return axios.get(API_URL).then((response) => response.data);
-}
+//import configureStore from './configureStore';
 
 import HelloWorld from './HelloWorld';
+//const store = configureStore();
 
-function App() {
-  const [hello, setHello] = useState('');
-
-  useEffect(() => {
-    console.log('usefecf');
-    let mounted = true;
-    getAPIData().then((items) => {
-      if (mounted) {
-        setHello(items.message);
-      }
-    });
-    return () => (mounted = false);
-  }, []);
-
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HelloWorld greeting={hello} />} />
-      </Routes>
-    </BrowserRouter>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<HelloWorld greeting="Friends" />} />
+          </Routes>
+        </BrowserRouter>
+      </Provider>
+    );
+  }
 }
+
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
+//import { composeWithDevTools } from 'redux-devtools-extension';
+
+import helloReducer from './helloworld/hello';
+
+const reducer = combineReducers({
+  helloReducer,
+});
+
+const store = createStore(reducer);
 
 export default App;
