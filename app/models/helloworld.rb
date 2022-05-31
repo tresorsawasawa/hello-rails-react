@@ -1,0 +1,2 @@
+class Helloworld < ApplicationRecord
+end
